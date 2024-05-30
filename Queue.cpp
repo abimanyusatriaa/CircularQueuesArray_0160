@@ -51,6 +51,23 @@ public:
             FRONT = -1;
             REAR = -1;
         }
+        else {
+            //jika elemen yang dihapus berada di posisi terkahir array, kembali ke awal rray
+            if (FRONT == max - 1)
+                FRONT = 0;
+            else
+                FRONT = FRONT + 1;
+        }
+    }
+
+    void display() {
+        //cek apakah antrian kosong
+        if (FRONT == -1) {
+            cout << "Queue is empty\n";
+            return;
+        }
+        cout << "\nElement in the queue are...\n";
+
     }
 };
 
