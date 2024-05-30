@@ -61,17 +61,21 @@ public:
     }
 
     void display() {
+
+        int FRONT_Position = FRONT;
+        int REAR_Position = REAR;
+
         //cek apakah antrian kosong
-        if (FRONT == -1) {
+        if (FRONT_Position == -1) {
             cout << "Queue is empty\n";
             return;
         }
         cout << "\nElement in the queue are...\n";
 
         //jika FRONT <= REAR, iterasi dari FRONT hingga REAR
-        if (FRONT <= REAR) {
-            while (FRONT <= REAR) {
-                cout << queue_array[FRONT] << " ";
+        if (FRONT_Position <= REAR_Position) {
+            while (FRONT_Position <= REAR_Position) {
+                cout << queue_array[FRONT_Position] << " ";
                 FRONT++;
             }
             cout << endl;
@@ -107,7 +111,37 @@ int main()
             cout << "2. Implementasi delete operation" << endl;
             cout << "3. Display values" << endl;
             cout << "4. Exit" << endl;
+            cout << "Enter your choice (1-4): ";
+            cin >> ch;
+            cout << endl;
+
+            switch (ch) {
+            case '1': {
+
+                q.insert();
+                break;
+            }
+            case '2': {
+                q.remove();
+                break;
+            }
+            case '3': {
+                q.display();
+                break;
+            }
+            case '4': {
+                return 0;
+            }
+            default: {
+                cout << "Invalid option!!" << endl;
+                break;
+            }
+            }
+        }
+        catch (exception& o) {
+            cout << "Check for the values entered." << endl;
         }
     }
+    
 }
 
