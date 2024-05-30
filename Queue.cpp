@@ -24,6 +24,11 @@ public:
             return;
         }
 
+        //cek apakah antrian kosong
+        if (FRONT == -1) {
+            FRONG = 0;
+            REAR = 0;
+        }
 
     }
 };
